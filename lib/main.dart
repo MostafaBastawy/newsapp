@@ -20,7 +20,6 @@ void main() async {
 class MyApp extends StatelessWidget {
   final bool isDark;
   MyApp(this.isDark);
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
