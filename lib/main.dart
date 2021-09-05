@@ -13,11 +13,12 @@ void main() async {
   Bloc.observer = MyBlocObserver();
   DioHelper.init();
   await CacheHelper.init();
+
   bool? isDark = CacheHelper.getData(key: 'isDark');
-  if (isDark == Null) {
-    isDark = false;
-  }
-  runApp(MyApp(isDark!));
+  // if (isDark == Null) {
+  //   isDark = false;
+  // }
+  runApp(MyApp(isDark ?? false));
 }
 
 class MyApp extends StatelessWidget {
