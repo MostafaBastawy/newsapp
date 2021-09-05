@@ -97,6 +97,26 @@ class NewsAppCubit extends Cubit<NewsAppStates> {
     });
   }
 
+  List<dynamic> search = [];
+
+  void getSearch(String value) {
+    emit(NewsAppGetSearchLoadingState());
+
+    DioHelper.getData(
+      url: 'v2/everything',
+      query: {
+        'q': '$value',
+        'apikey': '4974fc8a585143c2a18c4976f8175050',
+      },
+    ).then((value) {
+      search = value.data['articles'];
+      emit(NewsAppGetSearchSuccessState());
+    }).catchError((error) {
+      emit(NewsAppGetSearchErrorState(error.toString()));
+      print(error.toString());
+    });
+  }
+
   bool isDark = false;
   void changeAppMode({bool? fromShared}) {
     if (fromShared != null) {
