@@ -15,9 +15,7 @@ void main() async {
   await CacheHelper.init();
 
   bool? isDark = CacheHelper.getData(key: 'isDark');
-  // if (isDark == Null) {
-  //   isDark = false;
-  // }
+
   runApp(MyApp(isDark ?? false));
 }
 
