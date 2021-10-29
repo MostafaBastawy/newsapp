@@ -15,7 +15,11 @@ This is a news application. I made it to learn the all basics of the REST APIS (
     - conditional_builder_null_safety
     - shared_preferences
     - webview_flutter
-    
+
+## Video
+
+https://user-images.githubusercontent.com/81096412/139444928-5ab2aac8-18d2-4dd0-8541-65ed550254e4.mp4
+
 ## Screenshots
 
 <table>
